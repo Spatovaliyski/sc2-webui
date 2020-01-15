@@ -1,0 +1,92 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: inherit;
+  margin: 0;
+  font-family: sans-serif; }
+
+body {
+  background-image: url("../media/main-logon.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+  ul li,
+  ol li {
+    margin: 0;
+    list-style-type: none; }
+
+.nav {
+  display: flex;
+  flex-flow: row wrap; }
+  .nav li {
+    line-height: 55px;
+    padding: 0 13px; }
+
+.main-menu {
+  height: 56px;
+  width: 100%;
+  background: #0e1c29;
+  background: linear-gradient(0deg, #0e1c29 0%, #0a0b10 100%);
+  border-bottom: 1px solid #081324;
+  position: relative;
+  color: #b6d8e1;
+  font-weight: bold;
+  text-transform: uppercase; }
+  .main-menu:after {
+    border-bottom: 1px solid #232d36;
+    height: 1px;
+    width: 100%;
+    content: '';
+    position: absolute;
+    bottom: 0; }
+  .main-menu .nav li {
+    border-left: 1px solid #0d1627;
+    border-right: 1px solid #232d36; }
+
+.secondary-menu {
+  background: #0a0b0f;
+  height: 42px;
+  border-bottom: 2px solid #000005;
+  position: relative;
+  color: #5a7789;
+  font-weight: bold;
+  text-transform: uppercase; }
+  .secondary-menu:after {
+    border-bottom: 1px solid #1a1b20;
+    height: 1px;
+    width: 100%;
+    content: '';
+    position: absolute;
+    bottom: 0; }
+  .secondary-menu .nav {
+    margin-left: 56px; }
+  .secondary-menu .nav li {
+    font-size: 14px;
+    line-height: 40px; }
+
+.main-background {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0; }
+  .main-background video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%; }
+
+.test {
+  color: blue; }
