@@ -7,7 +7,9 @@ html {
 	
 	margin: 0;
 
-	font-family: sans-serif;
+	font-family: 'eurostile-extended', sans-serif;
+	font-weight: normal;
+	letter-spacing: .5px;
 }
 
 body {
@@ -21,6 +23,7 @@ body {
 *:before,
 *:after {
 	box-sizing: border-box;
+	font-weight: normal;
 }
 
 ul,

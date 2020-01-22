@@ -1,10 +1,13 @@
+@import url("https://use.typekit.net/bcn3ixd.css");
 body,
 html {
   width: 100%;
   height: 100%;
   box-sizing: inherit;
   margin: 0;
-  font-family: sans-serif; }
+  font-family: 'eurostile-extended', sans-serif;
+  font-weight: normal;
+  letter-spacing: .5px; }
 
 body {
   background-image: url("../media/main-logon.jpg");
@@ -15,7 +18,8 @@ body {
 *,
 *:before,
 *:after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-weight: normal; }
 
 ul,
 ol {
@@ -30,40 +34,70 @@ ol {
   display: flex;
   flex-flow: row wrap; }
   .nav li {
-    line-height: 55px;
-    padding: 0 13px; }
+    transition: .1s ease;
+    font-weight: 500;
+    line-height: 51px;
+    padding: 0 22px;
+    position: relative; }
+    .nav li:before, .nav li:after {
+      transition: inherit; }
+    .nav li:before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      height: 2px;
+      background: transparent;
+      width: calc(100% + 22px);
+      left: -11px;
+      z-index: 1; }
+    .nav li:hover {
+      border-color: #409bf6; }
+      .nav li:hover:before {
+        background: linear-gradient(90deg, rgba(64, 155, 246, 0) 0%, #409bf6 25%, #409bf6 50%, #409bf6 75%, rgba(64, 155, 246, 0) 100%); }
 
 .main-menu {
   height: 56px;
   width: 100%;
   background: #0e1c29;
-  background: linear-gradient(0deg, #0e1c29 0%, #0a0b10 100%);
-  border-bottom: 1px solid #081324;
+  background: linear-gradient(0deg, rgba(20, 33, 53, 0.9) 0%, rgba(15, 20, 35, 0.9) 100%);
+  border-bottom: 1px solid #050b0f;
   position: relative;
-  color: #b6d8e1;
+  color: #9aebff;
   font-weight: bold;
   text-transform: uppercase; }
   .main-menu:after {
-    border-bottom: 1px solid #232d36;
+    border-bottom: 2px solid #18384e;
     height: 1px;
     width: 100%;
     content: '';
     position: absolute;
     bottom: 0; }
+  .main-menu .nav {
+    border-top: 2px solid #000; }
   .main-menu .nav li {
-    border-left: 1px solid #0d1627;
-    border-right: 1px solid #232d36; }
+    cursor: pointer;
+    border-right: 2px solid #1c3a58;
+    border-top: 1px solid #1c3a58; }
+    .main-menu .nav li:hover {
+      box-shadow: 0 12px 25px #144791;
+      background: linear-gradient(to bottom, rgba(20, 71, 145, 0.15) 0%, rgba(20, 71, 145, 0.15) 9%, rgba(20, 71, 145, 0.75) 100%);
+      color: #FFF;
+      border-top-color: #21517d;
+      border-right-color: #21517d;
+      border-left-color: #21517d; }
+      .main-menu .nav li:hover:before {
+        border-color: #71dfff; }
 
 .secondary-menu {
-  background: #0a0b0f;
-  height: 42px;
+  background: rgba(10, 11, 15, 0.9);
+  height: 46px;
   border-bottom: 2px solid #000005;
   position: relative;
-  color: #5a7789;
+  color: #47849e;
   font-weight: bold;
   text-transform: uppercase; }
   .secondary-menu:after {
-    border-bottom: 1px solid #1a1b20;
+    border-bottom: 2px solid #13283a;
     height: 1px;
     width: 100%;
     content: '';
@@ -72,8 +106,24 @@ ol {
   .secondary-menu .nav {
     margin-left: 56px; }
   .secondary-menu .nav li {
-    font-size: 14px;
-    line-height: 40px; }
+    font-size: 13px;
+    line-height: 44px;
+    position: relative;
+    font-weight: 500;
+    cursor: pointer; }
+    .secondary-menu .nav li:hover {
+      color: #FFF; }
+    .secondary-menu .nav li:before {
+      bottom: 0; }
+    .secondary-menu .nav li:after {
+      height: 20px;
+      background: #152535;
+      width: 2px;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%); }
 
 .main-background {
   width: 100%;
