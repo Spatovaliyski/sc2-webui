@@ -36,3 +36,23 @@ ol {
 		list-style-type: none;
 	}
 }
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.section-fullwidth {
+	padding: 40px 0;
+}
+
+.row {
+	padding: 0 40px;
+}
+
+.section-heading h2 {
+	color: #FFF;
+	font-weight: 500;
+
+	text-shadow: 0px 0px 4px #000;
+}
