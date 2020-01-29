@@ -9,26 +9,35 @@
 
 			<div class="portraits">
 				<ul class="portraits-list">
+					<?php for ($i = 0; $i <= 30; $i+=1) : ?>
 					<li class="portraits-item">
-						<div class="frame-outer">
-							<div class="frame frame-top-left"></div> <!-- .frame -->
-							<div class="frame frame-top-right"></div> <!-- .frame -->
-							<div class="frame frame-bottom-left"></div> <!-- .frame -->
-							<div class="frame frame-bottom-right"></div> <!-- .frame -->
-						</div> <!-- .frame-outer -->
+						<div class="portraits-container">
+							<div class="frame-outer">
+								<div class="frame frame-top-left"></div> <!-- .frame -->
+								<div class="frame frame-top-right"></div> <!-- .frame -->
+								<div class="frame frame-bottom-left"></div> <!-- .frame -->
+								<div class="frame frame-bottom-right"></div> <!-- .frame -->
+							</div> <!-- .frame-outer -->
 
-						<div class="portraits-inner">
-							<div class="portraits-frame">
-								<div class="portraits-content">
-									<picture class="portraits-thumbnail">
-										<img src="public/media/kerrigan.jpg" alt="" />
-									</picture> <!-- .portraits-thumbnail -->
-									
-									<h4>Level 29 Brood Lord</h4>
-								</div> <!-- .portraits-content -->
-							</div> <!-- .portraits-frame -->
-						</div> <!-- .portraits-inner -->
+							<div class="portraits-inner">
+								<div class="portraits-frame">
+									<div class="portraits-border">
+										<div class="portrait-content">
+											<picture class="portraits-thumbnail">
+											<img src="public/media/kerrigan.png" alt="" />
+										</picture> <!-- .portraits-thumbnail -->
+										
+										<h4>Level 100 Guru</h4>
+										</div> <!-- .portrait-content -->
+										
+									</div> <!-- .portraits-content -->
+								</div> <!-- .portraits-frame -->
+							</div> <!-- .portraits-inner -->
+						</div> <!-- .portraits-container -->
 					</li>
+					<?php
+						endfor; 
+					?>
 				</ul> <!-- .portraits-list -->
 			</div> <!-- .portraits -->
 		</div> <!-- .row -->

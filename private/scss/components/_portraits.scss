@@ -1,6 +1,8 @@
-$color-primary: #02162f;
+$color-primary: lighten(#080e1a, 10);
 
-.portraits {	
+.portraits {
+	max-width: 1024px;
+
 	&-list {
 		display: flex;
 		flex-flow: row wrap;
@@ -8,61 +10,106 @@ $color-primary: #02162f;
 
 	&-item {
 		flex-basis: calc(100% / 6 - 10px);
+		margin-bottom: 30px;
 		flex-grow: 0;
 		flex-shrink: 0;
+	}
+
+	&-container {
 		position: relative;
-		width: 160px;
-		height: 180px;
+		width: 150px;
+		height: 200px;
 	}
 
 	&-inner {
-		font-family: Sans-serif;
+		font-family: sans-serif;
 		position: relative;
 		width: 100%;
 		height: 100%;
+		background: rgba($color-primary, .55);
+		padding: 2px;
 
-    	&:before {
-    		content: '';
-    		top: 0;
-    		left: 0;
-    		width: 100%;
-    		height: 100%;
+		&:before {
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			background: $color-primary;
 			opacity: .75;
 			backdrop-filter: blur(3px);
 
-    	}
+		}
 
 		h4 {
 			margin: 0;
+			padding: 0 15px;
+
+			height: 50px; // Max limit
+			display: flex;
+			align-items: center;
 		}
 	}
 
 	&-frame {
-		background: rgba($color-primary, .65);
 		backdrop-filter: blur(3px);
 		position: relative;
-		padding: 3px;
 		height: 100%;
+		border: 1px solid #040404;
+		border-radius: 2px;
 	}
 
-	&-content {
+	&-border {
 		height: 100%;
-		background: darken(rgba($color-primary, .65), 5);
-		border: 1px solid #3d5770;
+		background: rgba(#080e1a, .85);
+		backdrop-filter: blur(3px);
+		border: 1px solid #225c84;
+		border-radius: 2px;
 
 		text-align: center;
 		color: #9aebff;
+			position: relative;
+
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding: 3px;
+			border: 2px solid #1c2848;
+			top: 0;
+			left: 0;
+		}
+
+		&:after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding: 3px;
+			border: 1px solid #040404;
+			top: 0;
+			left: 0;
+		}
 	}
 
-	&-thumbanil {
+	&-content {
+
+	}
+
+	&-thumbnail {
 		height: 130px;
-		width: 100%;
-		
+		width: 130px;
+		display: block;
+		position: relative;
+		margin: 5px auto;
+		border: 1px solid #0e253b;
+		box-shadow: 0 -2px 3px -1px #000;
+
 		img {
 			height: 100%;
-    		width: 100%;
-    		object-fit: cover;	
+			width: 100%;
+			object-fit: cover;	
 		}
 	}
 }
@@ -75,17 +122,17 @@ $color-primary: #02162f;
 
 .frame {
 	width: 60px;
-	height: 4px;
+	height: 2px;
 	position: absolute;
 
-	background: rgba($color-primary, .85);
+	background: rgba($color-primary, .55);
 	backdrop-filter: blur(3px);
-	box-shadow: 0 0 3px 0 #000;
+	//box-shadow: 0 0 3px 0 #000;
 
 	// Second bracket
 	&:before {
 		width: 60px;
-		height: 4px;
+		height: 2px;
 		position: absolute;
 		transform: rotate(90deg);
 		content: '';
@@ -93,7 +140,7 @@ $color-primary: #02162f;
 		top: 31px;
 		left: -31px;
 
-		background: rgba($color-primary, .85);
+		background: rgba($color-primary, .55);
 		backdrop-filter: blur(3px);
 	}
 
@@ -102,11 +149,11 @@ $color-primary: #02162f;
 		top: 0;
 		position: absolute;
 		top: 0px;
-		left: -3px;
+		left: -2px;
 
 		border-style: solid;
-		border-width: 0 0 3px 3px;
-		border-color: transparent transparent rgba($color-primary, .85) transparent;
+		border-width: 0 0 2px 2px;
+		border-color: transparent transparent rgba($color-primary, .55) transparent;
 	}
 
 	&:before,
@@ -115,7 +162,7 @@ $color-primary: #02162f;
 	}
 
 	&.frame-top-left {
-		top: -3px;
+		top: -2px;
 		left: 0;
 
 		&:before {
@@ -127,8 +174,9 @@ $color-primary: #02162f;
 		}
 	}
 
+	// Top right angle
 	&.frame-top-right {
-		top: -3px;
+		top: -2px;
 		right: 0;
 
 		&:before {
@@ -137,17 +185,19 @@ $color-primary: #02162f;
 		}
 
 		&:after {
-			border-width: 3px 0 0 3px;
-			border-color: transparent transparent transparent rgba($color-primary, .85);
+			border-width: 2px 0 0 2px;
+			border-color: transparent transparent transparent rgba($color-primary, .55);
 
-			right: -3px;
+			right: -2px;
 			top: 0;
 			left: auto;
 		}
 	}
+	
 
+	// Bottom left angle
 	&.frame-bottom-left {
-		bottom: -3px;
+		bottom: -2px;
 		left: 0;
 
 		&:before {
@@ -156,16 +206,17 @@ $color-primary: #02162f;
 		}
 
 		&:after {
-			border-width: 0 3px 3px 0;
-			border-color: transparent rgba($color-primary, .85) transparent transparent;
+			border-width: 0 2px 2px 0;
+			border-color: transparent rgba($color-primary, .55) transparent transparent;
 
-			top: 1px;
-			left: -3px;
+			top: 0px;
+			left: -2px;
 		}
 	}
 
+	// Bottom right angle
 	&.frame-bottom-right {
-		bottom: -3px;
+		bottom: -2px;
 		right: 0;
 
 		&:before {
@@ -175,11 +226,11 @@ $color-primary: #02162f;
 		}
 
 		&:after {
-			border-width: 3px 3px 0 0;
-			border-color: rgba($color-primary, .85) transparent transparent transparent;
+			border-width: 2px 2px 0 0;
+			border-color: rgba($color-primary, .55) transparent transparent transparent;
 
 			bottom: 0px;
-			right: -3px;
+			right: -2px;
 			left: auto;
 			top: auto;
 		}
