@@ -38,7 +38,9 @@ img {
   padding: 40px 0; }
 
 .row {
-  padding: 0 40px; }
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1560px; }
 
 .section-heading h2 {
   color: #FFF;
@@ -89,11 +91,20 @@ img {
     position: absolute;
     bottom: 0; }
   .main-menu .nav {
-    border-top: 2px solid #000; }
+    border-top: 2px solid #1c3a58; }
+    .main-menu .nav:before {
+      position: absolute;
+      content: '';
+      background: #000;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      top: 0;
+      bottom: auto;
+      z-index: 1; }
   .main-menu .nav li {
     cursor: pointer;
-    border-right: 2px solid #1c3a58;
-    border-top: 1px solid #1c3a58; }
+    border-right: 2px solid #1c3a58; }
     .main-menu .nav li:hover {
       box-shadow: 0 12px 25px #144791;
       background: linear-gradient(to bottom, rgba(20, 71, 145, 0.15) 0%, rgba(20, 71, 145, 0.15) 9%, rgba(20, 71, 145, 0.75) 100%);
@@ -143,13 +154,32 @@ img {
       transform: translateY(-50%); }
 
 .portraits {
-  max-width: 1024px; }
+  max-width: 1024px;
+  flex: 1; }
   .portraits-list {
     display: flex;
-    flex-flow: row wrap; }
+    flex-flow: row wrap;
+    overflow: auto;
+    height: 640px;
+    margin-right: 30px;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */ }
+    .portraits-list::-webkit-scrollbar {
+      width: 10px; }
+    .portraits-list::-webkit-scrollbar-track {
+      background: transparent; }
+    .portraits-list::-webkit-scrollbar-thumb {
+      background: #5ea3e2;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0px 1px 1px #25353a; }
+    .portraits-list::-webkit-scrollbar-thumb:hover {
+      background: #5ea3e2;
+      border: rgba(255, 255, 255, 0.25); }
   .portraits-item {
-    flex-basis: calc(100% / 6 - 10px);
-    margin-bottom: 30px;
+    flex-basis: calc(100% / 6);
+    margin-bottom: 15px;
     flex-grow: 0;
     flex-shrink: 0; }
   .portraits-container {
@@ -162,7 +192,8 @@ img {
     width: 100%;
     height: 100%;
     background: rgba(20, 35, 65, 0.55);
-    padding: 2px; }
+    padding: 2px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85); }
     .portraits-inner:before {
       content: '';
       top: 0;
@@ -201,7 +232,8 @@ img {
       padding: 3px;
       border: 2px solid #1c2848;
       top: 0;
-      left: 0; }
+      left: 0;
+      z-index: -1; }
     .portraits-border:after {
       content: '';
       width: 100%;
@@ -210,7 +242,8 @@ img {
       padding: 3px;
       border: 1px solid #040404;
       top: 0;
-      left: 0; }
+      left: 0;
+      z-index: -1; }
   .portraits-thumbnail {
     height: 130px;
     width: 130px;
@@ -227,7 +260,8 @@ img {
 .frame-outer {
   position: absolute;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  box-shadow: 0px 0px 2px 0px #000; }
 
 .frame {
   width: 60px;
@@ -296,6 +330,74 @@ img {
       right: -2px;
       left: auto;
       top: auto; }
+
+.main {
+  display: flex;
+  flex-flow: row wrap; }
+
+.board {
+  flex: 0 0 435px;
+  padding: 40px;
+  border: 1px solid #050608;
+  position: relative;
+  background: rgba(12, 25, 44, 0.55);
+  backdrop-filter: blur(3px);
+  color: #99ebfe; }
+  .board * {
+    font-weight: 500; }
+  .board:after {
+    content: '';
+    border: 1px solid #182839;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  .board:before {
+    background: linear-gradient(to bottom, rgba(137, 175, 230, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    z-index: -1; }
+  .board-title {
+    color: #99ebfe;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85); }
+  .board-type {
+    margin-bottom: 0;
+    font-size: 20px; }
+  .board .board-informational {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+    background: rgba(10, 24, 43, 0.65); }
+    .board .board-informational .board-icon {
+      flex: 0 0 80px; }
+    .board .board-informational .board-meta {
+      flex: 1; }
+  .board .board-title-small {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85); }
+  .board .board-description {
+    margin: 0;
+    font-size: 13px;
+    font-family: sans-serif;
+    color: #187da3;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85); }
+  .board .board-earned-date {
+    font-size: 14px;
+    color: #477483;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85);
+    font-family: sans-serif; }
 
 .test {
   color: blue; }
