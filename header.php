@@ -7,6 +7,8 @@
 	<title>SCII UI</title>
 
 	<link rel="stylesheet" href="public/css/master.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
