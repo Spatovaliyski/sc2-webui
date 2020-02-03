@@ -10,7 +10,7 @@ html {
   letter-spacing: .5px; }
 
 body {
-  background-image: url("../media/main-logon.jpg");
+  background-image: url("main-logon.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover; }
